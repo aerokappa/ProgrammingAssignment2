@@ -37,7 +37,7 @@ cacheSolve <- function(x, ...) {
         
         inv <- x$getinv ## get cached inverse
         
-        ## the following code executes if the cahed inverse exists
+        ## the following code executes if the cached inverse exists
         if (!is.null(inv)) {
                 message("getting cached inverse")
                 return(inv)
@@ -45,7 +45,7 @@ cacheSolve <- function(x, ...) {
         
         ## if the inverse has not been cached yet
         data     <- x$get()
-        inverse  <- solve(data, ...)
+        inverse  <- solve(data, ...) ## find the inverse of the matrix
         x$setinv(inverse) ## set the value of the computed inverse in cache
         inverse
 }
